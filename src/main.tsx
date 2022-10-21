@@ -1,10 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { GifExpertApp } from './GifExpertApp'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { GifsProvider } from "./context";
+import { GifExpertApp } from "./GifExpertApp";
+import { ToastContainer } from 'react-toastify';
+import "./index.css";
+import 'react-toastify/dist/ReactToastify.css';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <GifExpertApp />
+    <GifsProvider>
+      <GifExpertApp />
+      <ToastContainer />
+    </GifsProvider>
   </React.StrictMode>
-)
+);
